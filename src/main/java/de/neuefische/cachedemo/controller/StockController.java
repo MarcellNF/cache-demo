@@ -2,7 +2,6 @@ package de.neuefische.cachedemo.controller;
 
 import de.neuefische.cachedemo.model.Stock;
 import de.neuefische.cachedemo.model.StockResponse;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +9,6 @@ import org.springframework.web.client.RestClient;
 
 import java.time.LocalDateTime;
 
-@Cacheable(value = "stock", key = "#root.methodName") // Makes this controller cacheable and using the method name as the cache key
 @RestController
 @RequestMapping("/api/stock")
 public class StockController {

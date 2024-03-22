@@ -1,3 +1,4 @@
+/*
 package de.neuefische.cachedemo.config;
 
 import org.springframework.cache.CacheManager;
@@ -25,4 +26,4 @@ public class CachingConfig {
 
         return cacheManager;
     }
-}
+}*/
