@@ -1,4 +1,3 @@
-/*
 package de.neuefische.cachedemo.config;
 
 import org.springframework.cache.CacheManager;
@@ -20,10 +19,10 @@ public class CachingConfig {
 
         cacheManager.setCaffeine(
                 newBuilder()
-                        .expireAfterWrite(10, TimeUnit.SECONDS)
+                        .expireAfterWrite(60, TimeUnit.MINUTES)
                         .weakKeys()
                         .recordStats());
 
         return cacheManager;
     }
-}*/
+}

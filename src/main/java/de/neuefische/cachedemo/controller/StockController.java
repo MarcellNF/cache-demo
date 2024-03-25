@@ -2,6 +2,7 @@ package de.neuefische.cachedemo.controller;
 
 import de.neuefische.cachedemo.model.Stock;
 import de.neuefische.cachedemo.model.StockResponse;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/api/stock")
+@Cacheable(value = "stock", key = "#root.methodName")
 public class StockController {
 
     private final RestClient restClient = RestClient.create("https://finnhub.io/api/v1/quote");
